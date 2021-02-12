@@ -27,10 +27,15 @@ Next, enter the following command 'git clone https://github.com/MorganJBradford/
 
 The terminal should return with something similar to:
 
->
->
->
->
+
+> Cloning into 'currency-exchange-rate'...
+> remote: Enumerating objects: 94, done.
+> remote: Counting objects: 100% (94/94), done.
+> remote: Compressing objects: 100% (48/48), done.
+> remote: Total 94 (delta 40), reused 90 (delta 36), pack-reused 0
+> Receiving objects: 100% (94/94), 197.93 KiB | 1.12 MiB/s, done.
+> Resolving deltas: 100% (40/40), done.
+
 
 Next enter the command 'ls' which should return with a list of files and directories. Mine returned with:
 
@@ -40,16 +45,46 @@ Because I did not have a directory named currency-exchange-rate, I know it downl
 
 Next enter the directory with the command 'cd currency-exchange-rate'. To confirm your location, enter 'pwd'. I received the following message "/c/Users/vampi/OneDrive/Desktop/epicodus/projects/SGA-Calculator". Once your location is confirmed, enter 'npm install'. You may see a similar message to the following:
 
->
->
->
->
->
->
->
->
 
-The warning are related to newer software being available, and should not prevent the application from running.
+> npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+> npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+> npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+> npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+> npm WARN deprecated left-pad@1.3.0: use String.prototype.padStart()
+> npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+> npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+> npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+> npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+> npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+> npm WARN deprecated eslint-loader@3.0.0: This loader has been deprecated. Please use eslint-webpack-plugin
+> npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+> npm WARN deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+>
+> added 1030 packages, and audited 1031 packages in 6s
+>
+> 39 packages are looking for funding
+>   run `npm fund` for details
+>
+> 3 low severity vulnerabilities
+>
+> To address all issues, run:
+>   npm audit fix --force
+>
+> Run `npm audit` for details.
+
+
+The warnings above are related to newer software being available, and should not prevent the application from running.
+
+Next, you will need an API key, which you can get by following this [link](https://www.exchangerate-api.com). You will need to enter your email and click "Get Free Key" This will take you to a page that will list your API key. Keep your code handy, as we will need it for the next step.
+
+Open your favorite code editor and navigate to the top level directory. You will then need to create a file called ".env", this is where we will put your api key. Inside of ".env" add the line "api_key=YOUR-API-KEY" where 'YOUR-API-KEY' should be the key you got in the previous step.
+
+**Step for mac users only**: navigate to the file "package.json". Line 8 should read:
+```"start": "npm run build & webpack-dev-server --open --mode development",```
+this will need te be changed to:
+```"start": "npm run build; webpack-dev-server --open --mode development",```
+then the file needs to be saved.
+**end mac user step**
 
 Next, enter 'npm run start'. The will run a development server in your default web browser.
 
