@@ -17,12 +17,13 @@ function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
       $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.PHP}</p>`);
     } else if (desiredCurrencyCode === "RUB") {
       $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.RUB}</p>`);
+    } else if (desiredCurrencyCode !== "HTG" || desiredCurrencyCode !== "IQD" || desiredCurrencyCode !== "KRW" || desiredCurrencyCode !== "PHP" || desiredCurrencyCode !== "RUB") {
+      return new Error('Currency not available.');
     } else {
       $('#showErrors').text(`There was an error: ${response}`);
     }
   }
 }
-
 
 async function exchangeApiCall(desiredCurrencyCode, inputCurrency) {
   const response = await ExchangeRateService.getCurrencyRate();

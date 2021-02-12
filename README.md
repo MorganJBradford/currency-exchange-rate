@@ -77,7 +77,7 @@ The warnings above are related to newer software being available, and should not
 
 Next, you will need an API key, which you can get by following this [link](https://www.exchangerate-api.com). You will need to enter your email and click "Get Free Key" This will take you to a page that will list your API key. Keep your code handy, as we will need it for the next step.
 
-Open your favorite code editor and navigate to the top level directory. You will then need to create a file called ".env", this is where we will put your api key. Inside of ".env" add the line "api_key=YOUR-API-KEY" where 'YOUR-API-KEY' should be the key you got in the previous step.
+Open your favorite code editor and navigate to the top level directory. You will then need to create a file called ".env", this is where we will put your api key. Inside of ".env" add the line "API_KEY=YOUR-API-KEY" where 'YOUR-API-KEY' should be the key you got in the previous step.
 
 **Step for mac users only**: navigate to the file "package.json". Line 8 should read:
 ```"start": "npm run build & webpack-dev-server --open --mode development",```
