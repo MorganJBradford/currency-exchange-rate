@@ -2,8 +2,8 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import ExchangeRateService from './js/exchange-rate-service';
-// import {checkCurrency} from './js/exchanger';
+import ExchangeRateService from './js/exchange-rate-service.js';
+
 
 function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
   if (response.result){
@@ -32,7 +32,6 @@ async function exchangeApiCall(desiredCurrencyCode, inputCurrency) {
 $(document).ready(function(){
   $('#rate-checker').click(function(){
     let inputCurrency = parseFloat($('#currency-to-convert').val());
-    console.log(inputCurrency);
     let desiredCurrencyCode = $('#desired-currency').val();
     exchangeApiCall(desiredCurrencyCode, inputCurrency);
   });
