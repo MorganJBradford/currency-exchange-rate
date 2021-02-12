@@ -6,10 +6,16 @@ import ExchangeRateService from './js/exchange-rate-service.js';
 
 
 function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
-  if (response.result){
-    $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates[desiredCurrencyCode]} ${desiredCurrencyCode}</p>`);
+  console.log(inputCurrency);
+  if (response.conversion_rates[desiredCurrencyCode] === undefined) {
+    $('.show-errors').text(`Sorry, but "${response.conversion_rates[desiredCurrencyCode]}" is not a valid currency`);
+    return;
+  } else if (isNaN(inputCurrency)) {
+    $('.show-errors').text(`Please enter a number:`);
+  } else if (response.result) {
+    $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates[desiredCurrencyCode]} ${desiredCurrencyCode}</p>`);  
   } else {
-    $('#showErrors').text(`There was an error: ${response}`);
+    $('.show-errors').text(`There was an error: ${response}`);
   }
 }
 

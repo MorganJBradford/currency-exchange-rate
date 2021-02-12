@@ -8,7 +8,7 @@
     <h1>Currency Exchanger:</h1>
     <h2>Check what the USD exchange rate is to a variety of currencies.</h2>
     <label for="curreny-to-convert">Enter the a dollar amount below:</label>
-    <input type="number" name="dollars" id="currency-to-convert">
+    <input type="number" name="dollars" id="currency-to-convert" required>
     <label for="desired-currency">Select the currency you would like to see an exchange rate for:</label>
     <select id="desired-currency">
       <option value="AED">UAE Dirham</option>
@@ -171,10 +171,10 @@
       <option value="YER">Yemeni Rial</option>
       <option value="ZAR">South African Rand</option>
       <option value="ZMW">Zambian Kwacha</option>
-      <option value="testforerror">Test</option>
     </select>
     <button id="rate-checker">Check!</button>
   </div>
   <div id="output"></div>
+  <div class="show-errors"></div>
 </body>
 </html>
