@@ -6,7 +6,7 @@ import ExchangeRateService from './js/exchange-rate-service';
 
 function outputExchangeRate(response) {
   if (response.result){
-    $('#output').text(`The exchange rate from USD to ${desiredCurrencyCode} is ${response.conversion_rates}.${desiredCurrencyCode}`);
+    $('#output').text(`The exchange rate from USD is ${response.conversion_rates.desiredCurrencyCode}`);
   } else {
     $('#showErrors').text(`There was an error: ${response}`);
   }
