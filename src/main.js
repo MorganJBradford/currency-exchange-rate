@@ -8,7 +8,7 @@ function outputExchangeRate(response) {
   if (response.result){
     $('#output').text(`The exchange rate from USD to ${desiredCurrencyCode} is ${response.conversion_rates}.${desiredCurrencyCode}`);
   } else {
-    $('.showErrors').text(`There was an error: ${response}`);
+    $('#showErrors').text(`There was an error: ${response}`);
   }
 }
 
@@ -17,3 +17,9 @@ async function exchangeApiCall(desiredCurrencyCode) {
   outputExchangeRate(response);
 }
 
+$(document).ready(function(){
+  $('#rate-checker').click(function(){
+    let desiredCurrencyCode = $('#').val();
+    exchangeApiCall(desiredCurrencyCode);
+  });
+});
