@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "currency-exchange-rate",
   "version": "1.0.0",
-  "description": "* _List all_\r * _the major technologies_\r * _you used in your project_\r * _here_",
+  "description": "* _HTML_\r * _EcmaScript6_\r * _jQuery_\r * _APIs_",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
