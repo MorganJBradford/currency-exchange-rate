@@ -4,5 +4,22 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+    <h1>Currency Exchanger:</h1>
+    <h2>Check what the USD exchange rate is to a variety of currencies.</h2>
+    <form id="exchange-form">
+      <label for="curreny-to-convert">Enter the a dollar amount below:</label>
+      <input type="number" name="dollars" id="currency-to-convert">
+      <label for="desired-currency">Select the currency you would like to see an exchange rate for:</label>
+      <select id="desired-currency">
+        <option value="HTG">Haitian Gourde</option>
+        <option value="IQD">Iraqi Dinar</option>
+        <option value="KRW">South Korean Won</option>
+        <option value="PHP">Philippine Peso</option>
+        <option value="RUB">Russian Ruble</option>
+      </select>
+      <button id="rate-checker">Check!</button>
+    </form>
+  </div>
 </body>
 </html>

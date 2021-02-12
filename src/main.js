@@ -19,7 +19,8 @@ async function exchangeApiCall(desiredCurrencyCode) {
 
 $(document).ready(function(){
   $('#rate-checker').click(function(){
-    let desiredCurrencyCode = $('#').val();
+    let desiredCurrencyCode = $('#desired-currency').val();
+    console.log(desiredCurrencyCode);
     exchangeApiCall(desiredCurrencyCode);
   });
 });
