@@ -1,3 +1,13 @@
 9:30: Trying to enter user input into a template literal 9:30 - 10:31
 10:31: cannot figure this out. Using branching statement to append; needs to be business logic; refactoring and adding tests though I feel like there has to be an easier way. 9:30 - 11:32
 11:32: decided against business logic. Accidentally deleted service logic file. Fixed.
+12:35: lunch. - returned 13:27.
+15:27: returning to (entry 1) trying to put a variable in place of the string at the end of response.conversion_rates.
+  Search: "replace property with variable in template literal js"
+  Reviewing: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+  15:45-Search: "identity property via variable js" 
+  15:47-Search: "template literal object property javascript"
+  15:47-Search: "variable as in place of object property javascript"
+  Reviewing: https://www.tutorialrepublic.com/faq/how-to-dynamically-access-object-property-using-variable-in-javascript.php
+  Realized need to add api key again after cloning project....
+  bracket notation solved problem.
