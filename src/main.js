@@ -3,24 +3,37 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeRateService from './js/exchange-rate-service';
+// import {checkCurrency} from './js/exchanger';
 
-function outputExchangeRate(response) {
+function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
   if (response.result){
-    $('#output').text(`The exchange rate from USD is ${response.conversion_rates.desiredCurrencyCode}`);
-  } else {
-    $('#showErrors').text(`There was an error: ${response}`);
+    if (desiredCurrencyCode === "HTG") {
+      $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.HTG} ${desiredCurrencyCode}</p>`);
+    } else if (desiredCurrencyCode === "IQD") {
+      $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.IQD}</p>`);
+    } else if (desiredCurrencyCode === "KRW") {
+      $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.KRW}</p>`);
+    } else if (desiredCurrencyCode === "PHP") {
+      $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.PHP}</p>`);
+    } else if (desiredCurrencyCode === "RUB") {
+      $('#output').append(`<p>The exchange rate for $${inputCurrency} to ${desiredCurrencyCode} is ${inputCurrency * response.conversion_rates.RUB}</p>`);
+    } else {
+      $('#showErrors').text(`There was an error: ${response}`);
+    }
   }
 }
 
-async function exchangeApiCall(desiredCurrencyCode) {
-  const response = await ExchangeRateService.getCurrencyRate(desiredCurrencyCode);
-  outputExchangeRate(response);
+
+async function exchangeApiCall(desiredCurrencyCode, inputCurrency) {
+  const response = await ExchangeRateService.getCurrencyRate();
+  outputExchangeRate(response, desiredCurrencyCode, inputCurrency);
 }
 
 $(document).ready(function(){
   $('#rate-checker').click(function(){
+    let inputCurrency = parseFloat($('#currency-to-convert').val());
+    console.log(inputCurrency);
     let desiredCurrencyCode = $('#desired-currency').val();
-    console.log(desiredCurrencyCode);
-    exchangeApiCall(desiredCurrencyCode);
+    exchangeApiCall(desiredCurrencyCode, inputCurrency);
   });
 });
