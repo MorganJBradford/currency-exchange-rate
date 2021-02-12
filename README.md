@@ -84,7 +84,6 @@ Open your favorite code editor and navigate to the top level directory. You will
 this will need te be changed to:
 ```"start": "npm run build; webpack-dev-server --open --mode development",```
 then the file needs to be saved.
-**end mac user step**
 
 Next, enter 'npm run start'. The will run a development server in your default web browser.
 
@@ -95,7 +94,7 @@ Next, enter 'npm run start'. The will run a development server in your default w
 
 ## License
 
-(MIT)[LICENSE.txt]
+[MIT](LICENSE.txt)
 
 ## Contact Information
 
