@@ -4,6 +4,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: white;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: black;
+  -moz-text-stroke-width: 0.2px;
+  -moz-text-stroke-color: black;
 }
 .currency-from-input, .currency-to-input {
   padding: 20px;
@@ -14,4 +19,18 @@ body {
 #output, .show-errors {
   margin: 20px;
   text-align: center;
+}
+h1, h2 {
+  font-family: 'Ballet', cursive;
+  -webkit-text-stroke-width: 0.002px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -moz-text-stroke-width: 0.002px;
+  -moz-text-stroke-color: rgb(0, 0, 0);
+}
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(89, 34, 35, 0.5);
+  border: 2px solid black;
+  border-radius: .3rem;
 }
