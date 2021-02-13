@@ -6,7 +6,7 @@
 <body>
   <div class="container">
     <h1>Currency Exchanger:</h1>
-    <h2>Check what the USD exchange rate is to a variety of currencies.</h2>
+    <h2>See current currency exchange rates:</h2>
     <div class="currency-from-input">
       <label for="convert-from">Select the currency you would like to convert from:</label>
       <select id="convert-from">
@@ -171,11 +171,12 @@
         <option value="ZAR">South African Rand</option>
         <option value="ZMW">Zambian Kwacha</option>
       </select>
-      <label for="curreny-to-convert">Enter the a dollar amount below:</label>
+      <br>
+      <label for="curreny-to-convert">Enter the quantity to convert:</label>
       <input type="number" name="dollars" id="currency-to-convert" required>
     </div>
     <div class="currency-to-input">
-      <label for="desired-currency">Select the currency you would like to see an exchange rate for:</label>
+      <label for="desired-currency">Currency to exchange to:</label>
       <select id="desired-currency">
         <option value="AED">UAE Dirham</option>
         <option value="AFN">Afghan Afghani</option>
@@ -339,7 +340,7 @@
         <option value="ZMW">Zambian Kwacha</option>
       </select>
     </div>
-    <button id="rate-checker">Check!</button>
+    <button id="rate-checker">Convert</button>
   </div>
   <div id="output"></div>
   <div class="show-errors"></div>
