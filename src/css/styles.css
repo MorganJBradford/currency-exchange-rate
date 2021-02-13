@@ -4,3 +4,7 @@
 #convert-from {
   margin: 0 0 20px 0;
 }
+#output, .show-errors {
+  margin: 20px;
+  text-align: center;
+}

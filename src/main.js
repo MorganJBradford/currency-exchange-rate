@@ -8,7 +8,6 @@ function clearFields() {
   $('.show-errors').text('');
   $('#output').text('');
   $('.please-enter-number').text('');
-  
 }
 
 function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {

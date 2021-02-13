@@ -1,19 +1,21 @@
 # _currency-exchange-rate_
 
-#### _Allows you to check USD currency exchange rate_
+#### _Allows you to check current currency exchange rate_
 
 #### By _**Morgan Bradford**_
 
 ## Technologies Used
 
 * _HTML_
+* _CSS_
+*_Bootstrap_
 * _EcmaScript6_
 * _jQuery_
 * _exchangerate-API_
 
 ## Description
 
-_Allows you to check USD currency exchange rate_
+_Allows you to check current currency exchange rates utilizing the [exchangeRate-API](https://www.exchangerate-api.com). Convert between 160 different currencies!_
 
 ## Setup/Installation Requirements
 
@@ -79,7 +81,7 @@ Next, you will need an API key, which you can get by following this [link](https
 
 Open your favorite code editor and navigate to the top level directory. You will then need to create a file called ".env", this is where we will put your api key. Inside of ".env" add the line "API_KEY=YOUR-API-KEY" where 'YOUR-API-KEY' should be the key you got in the previous step.
 
-**Step for mac users only**: navigate to the file "package.json". Line 8 should read:
+**Thin step for mac users only**: navigate to the file "package.json". Line 8 should read:
 ```"start": "npm run build & webpack-dev-server --open --mode development",```
 this will need te be changed to:
 ```"start": "npm run build; webpack-dev-server --open --mode development",```
