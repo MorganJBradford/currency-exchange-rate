@@ -7,7 +7,7 @@ import ExchangeRateService from './js/exchange-rate-service.js';
 function clearFields() {
   $('.show-errors').text('');
   $('#output').text('');
-  $('.please-enter-number').text('');
+  $('.number-errors').text('');
 }
 
 function outputExchangeRate(response, desiredCurrencyCode, inputCurrency, inputCurrencyCode) {
@@ -15,7 +15,9 @@ function outputExchangeRate(response, desiredCurrencyCode, inputCurrency, inputC
     $('.show-errors').text(`Sorry, but "${response.conversion_rates[desiredCurrencyCode]}" is not a valid currency`);
     return;
   } else if (isNaN(inputCurrency)) {
-    $('.please-enter-number').text(`Please enter a number:`);
+    $('.number-errors').text(`Please enter a number above.`);
+  } else if (inputCurrency < 0) {
+    $('.number-errors').text(`Please enter a positive number above, silly.`);
   } else if (response.result) {
     $('#output').append(`<p>${inputCurrency} ${inputCurrencyCode} is the equivalent of ${inputCurrency * response.conversion_rates[desiredCurrencyCode]} ${desiredCurrencyCode}</p>`);  
   } else {

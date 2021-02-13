@@ -38,3 +38,43 @@ h1, h2 {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
 }
+.number-errors {
+  color: white;
+  background-color: black;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% {
+    color: blue;
+  }
+  10% {
+  color: red;
+  }
+  20% {
+    color: yellow;
+  }
+  30% {
+    color: turquoise;
+  }
+  40% {
+    color: burlywood;
+  }
+  50% {
+    color: chartreuse;
+  }
+  60% {
+    color:cornflowerblue;
+  }
+  70% {
+    color: darkred;
+  }
+  80% {
+    color:mediumvioletred;
+  }
+  90% {
+    color: tomato;
+  }
+  100% {
+    color: snow;
+  }
+}
