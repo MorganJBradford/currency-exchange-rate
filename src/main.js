@@ -10,14 +10,14 @@ function clearFields() {
   $('.please-enter-number').text('');
 }
 
-function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
+function outputExchangeRate(response, desiredCurrencyCode, inputCurrency, inputCurrencyCode) {
   if (response.conversion_rates[desiredCurrencyCode] === undefined) {
     $('.show-errors').text(`Sorry, but "${response.conversion_rates[desiredCurrencyCode]}" is not a valid currency`);
     return;
   } else if (isNaN(inputCurrency)) {
     $('.please-enter-number').text(`Please enter a number:`);
   } else if (response.result) {
-    $('#output').append(`<p>The exchange rate for ${inputCurrency} is ${inputCurrency * response.conversion_rates[desiredCurrencyCode]} ${desiredCurrencyCode}</p>`);  
+    $('#output').append(`<p>${inputCurrency} ${inputCurrencyCode} is the equivalent of ${inputCurrency * response.conversion_rates[desiredCurrencyCode]} ${desiredCurrencyCode}</p>`);  
   } else {
     $('.show-errors').text(`There was an error: ${response}`);
   }
@@ -26,7 +26,7 @@ function outputExchangeRate(response, desiredCurrencyCode, inputCurrency) {
 
 async function exchangeApiCall(inputCurrencyCode, desiredCurrencyCode, inputCurrency) {
   const response = await ExchangeRateService.getCurrencyRate(inputCurrencyCode);
-  outputExchangeRate(response, desiredCurrencyCode, inputCurrency);
+  outputExchangeRate(response, desiredCurrencyCode, inputCurrency, inputCurrencyCode);
 }
 
 $(document).ready(function(){
